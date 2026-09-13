@@ -31,16 +31,16 @@ function Landing() {
       </motion.div>
 
 
-      <div className="relative z-10 max-w-4xl px-4 md:px-8 mx-auto text-center w-full">
+      <div className="relative z-10 max-w-5xl px-4 md:px-8 mx-auto text-center w-full">
         <motion.h1 
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
           className="text-base sm:text-lg md:text-2xl lg:text-3xl font-light tracking-wide md:tracking-[0.15em] leading-relaxed md:leading-loose text-white/90"
         >
-          We're a BCI lab dedicated to decoding human thoughts within the next decade
+          We're a BCI lab dedicated to decoding human thoughts
           <br className="hidden md:block" />
-          through a data-driven approach.
+          within the next decade through a data-driven approach.
         </motion.h1>
       </div>
 
