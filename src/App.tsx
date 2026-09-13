@@ -38,7 +38,7 @@ function Landing() {
           transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
           className="text-base sm:text-lg md:text-2xl lg:text-3xl font-light tracking-wide md:tracking-[0.15em] leading-relaxed md:leading-loose text-white/90"
         >
-          We're a BCI lab dedicated to decoding human thoughts within the next decade,
+          We're a BCI lab dedicated to decoding human thoughts within the next decade
           <br className="hidden md:block" />
           through a data-driven approach.
         </motion.h1>
