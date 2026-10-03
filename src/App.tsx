@@ -49,8 +49,19 @@ function Landing() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-8 right-8 z-50 flex flex-col md:flex-row justify-between items-center md:items-end gap-4"
+        className="absolute bottom-8 left-8 right-8 z-50 flex flex-col gap-4"
       >
+        <p className="text-center text-[11px] md:text-xs text-white/50 tracking-wide leading-relaxed">
+          For support, collaborations, or general inquiries, reach out to us at{' '}
+          <a
+            href="mailto:support@aresneuro.com"
+            className="text-white/80 underline underline-offset-4 decoration-white/30 hover:text-white hover:decoration-white/80 transition-colors"
+          >
+            support@aresneuro.com
+          </a>
+          .
+        </p>
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
         <span className="text-[10px] md:text-xs text-white/40 tracking-widest uppercase font-medium">
           Copyright © MindFlow 2026
         </span>
@@ -67,6 +78,7 @@ function Landing() {
           >
             Health Privacy Policy
           </Link>
+        </div>
         </div>
       </motion.div>
     </main>
