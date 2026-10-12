@@ -38,9 +38,7 @@ function Landing() {
           transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
           className="text-base sm:text-lg md:text-2xl lg:text-3xl font-light tracking-wide md:tracking-[0.15em] leading-relaxed md:leading-loose text-white/90"
         >
-          We’re a BCI lab building foundation models
-          <br className="hidden md:block" />
-          to decode human thought within the next decade.
+          Decoding how the brain perceives, thinks, and expresses.
         </motion.h1>
       </div>
 

@@ -1,6 +1,6 @@
 {
   "name": "Ares Neuro Lab",
-  "description": "A mysterious BCI lab landing page.",
+  "description": "Decoding how the brain perceives, thinks, and expresses.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
