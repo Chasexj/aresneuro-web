@@ -31,12 +31,12 @@ function Landing() {
       </motion.div>
 
 
-      <div className="relative z-10 max-w-5xl px-4 md:px-8 mx-auto text-center w-full">
+      <div className="relative z-10 max-w-none px-4 md:px-8 mx-auto text-center w-full">
         <motion.h1 
           initial={{ opacity: 0, filter: 'blur(10px)' }}
           animate={{ opacity: 1, filter: 'blur(0px)' }}
           transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
-          className="text-base sm:text-lg md:text-2xl lg:text-3xl font-light tracking-wide md:tracking-[0.15em] leading-relaxed md:leading-loose text-white/90"
+          className="whitespace-nowrap text-[min(18px,3vw)] md:text-[min(30px,2.7vw)] font-light tracking-wide md:tracking-[0.15em] leading-relaxed md:leading-loose text-white/90"
         >
           Decoding how the brain perceives, thinks, and expresses.
         </motion.h1>
