@@ -27,3 +27,10 @@
 @keyframes terminal-blink {
   50% { opacity: 0; }
 }
+
+/* Keep every edge black, including overscroll/rubber-band areas */
+html,
+body {
+  background: #000;
+  overscroll-behavior: none;
+}

@@ -26,7 +26,7 @@ function Landing() {
   }, []);
 
   return (
-    <main className="terminal-screen min-h-screen w-full bg-black p-6 md:p-10 text-[#33ff66] font-['VT323',ui-monospace,monospace] text-xl md:text-2xl leading-snug selection:bg-[#33ff66] selection:text-black">
+    <main className="terminal-screen min-h-dvh w-full bg-black p-6 md:p-10 text-[#33ff66] font-['VT323',ui-monospace,monospace] text-xl md:text-2xl leading-snug selection:bg-[#33ff66] selection:text-black">
       <h1 aria-label={HEADLINE} className="terminal-glow font-normal whitespace-nowrap">
         <span aria-hidden="true">C:\&gt; {HEADLINE.slice(0, typed)}</span>
         <span aria-hidden="true" className="terminal-cursor">&#9608;</span>
