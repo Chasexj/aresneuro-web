@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.typewriter-cursor {
+  animation: typewriter-blink 1s steps(1) infinite;
+}
+
+@keyframes typewriter-blink {
+  50% { opacity: 0; }
+}

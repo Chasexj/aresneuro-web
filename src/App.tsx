@@ -3,82 +3,39 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { motion } from 'motion/react';
-import { BrowserRouter, Routes, Route, Link, Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import HealthPolicy from './HealthPolicy';
 import PrivacyPolicy from './PrivacyPolicy';
 
+const HEADLINE = 'DECODING BRAINS';
+
 function Landing() {
+  const [typed, setTyped] = useState(0);
+
+  useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setTyped(HEADLINE.length);
+      return;
+    }
+    let i = 0;
+    const id = window.setInterval(() => {
+      i += 1;
+      setTyped(i);
+      if (i >= HEADLINE.length) window.clearInterval(id);
+    }, 120);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
-    <main 
-      className="relative min-h-screen w-full flex items-center justify-center overflow-hidden bg-black text-neutral-300 selection:bg-white/20 selection:text-white"
-      style={{
-        backgroundImage: "url('/bg.png')",
-        backgroundSize: 'cover',
-        backgroundPosition: 'right center',
-        backgroundRepeat: 'no-repeat'
-      }}
-    >
-      {/* Top Navigation / Brand */}
-      <motion.div 
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-        className="absolute top-8 left-8 md:top-12 md:left-12 flex items-center gap-4 z-50"
+    <main className="min-h-screen w-full flex items-center justify-center bg-black text-white px-4 selection:bg-white/20">
+      <h1
+        aria-label={HEADLINE}
+        className="font-['IBM_Plex_Mono',ui-monospace,monospace] font-medium whitespace-nowrap w-[16ch] text-left text-[min(9vw,7rem)] tracking-tight"
       >
-        <img src="/logo.png" alt="Ares Neuro Lab Logo" className="h-8 md:h-10 w-auto object-contain" />
-        <img src="/name.png" alt="Ares Neuro Lab Name" className="h-5 md:h-6 w-auto object-contain" />
-      </motion.div>
-
-
-      <div className="relative z-10 max-w-none px-4 md:px-8 mx-auto text-center w-full">
-        <motion.h1 
-          initial={{ opacity: 0, filter: 'blur(10px)' }}
-          animate={{ opacity: 1, filter: 'blur(0px)' }}
-          transition={{ duration: 2, ease: "easeOut", delay: 0.5 }}
-          className="text-balance md:whitespace-nowrap text-lg sm:text-xl md:text-[min(30px,2.7vw)] font-light tracking-wide md:tracking-[0.15em] leading-relaxed md:leading-loose text-white/90"
-        >
-          Decoding how the brain perceives, thinks, and expresses.
-        </motion.h1>
-      </div>
-
-      {/* Footer */}
-      <motion.div 
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className="absolute bottom-8 left-8 right-8 z-50 flex flex-col gap-4"
-      >
-        <p className="text-center text-[11px] md:text-xs text-white/50 tracking-wide leading-relaxed">
-          For support, collaborations, or general inquiries, reach out to us at{' '}
-          <a
-            href="mailto:support@aresneuro.com"
-            className="text-white/80 underline underline-offset-4 decoration-white/30 hover:text-white hover:decoration-white/80 transition-colors"
-          >
-            support@aresneuro.com
-          </a>
-          .
-        </p>
-        <div className="flex flex-col md:flex-row justify-between items-center md:items-end gap-4">
-        <span className="text-[10px] md:text-xs text-white/40 tracking-widest uppercase font-medium">
-          Copyright © MindFlow 2026
-        </span>
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6">
-          <Link 
-            to="/privacy-policy" 
-            className="text-[10px] md:text-xs text-white/40 hover:text-white/90 transition-colors tracking-widest uppercase font-medium"
-          >
-            Privacy Policy
-          </Link>
-          <Link 
-            to="/health-policy" 
-            className="text-[10px] md:text-xs text-white/40 hover:text-white/90 transition-colors tracking-widest uppercase font-medium"
-          >
-            Health Privacy Policy
-          </Link>
-        </div>
-        </div>
-      </motion.div>
+        <span aria-hidden="true">{HEADLINE.slice(0, typed)}</span>
+        <span aria-hidden="true" className="typewriter-cursor">_</span>
+      </h1>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 {
   "name": "Ares Neuro Lab",
-  "description": "Decoding how the brain perceives, thinks, and expresses.",
+  "description": "Decoding brains.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
