@@ -29,7 +29,7 @@ function Landing() {
     <main className="min-h-screen w-full flex items-center justify-center bg-black text-white px-4 selection:bg-white/20">
       <h1
         aria-label={HEADLINE}
-        className="font-['IBM_Plex_Mono',ui-monospace,monospace] font-medium whitespace-nowrap w-[16ch] text-left text-[min(9vw,7rem)] tracking-tight"
+        className="font-['IBM_Plex_Mono',ui-monospace,monospace] font-medium whitespace-nowrap w-[calc(16ch+3.2em)] text-left text-sm md:text-base tracking-[0.2em]"
       >
         <span aria-hidden="true">{HEADLINE.slice(0, typed)}</span>
         <span aria-hidden="true" className="typewriter-cursor">_</span>
