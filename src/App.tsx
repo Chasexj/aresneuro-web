@@ -5,8 +5,6 @@
 
 import { useEffect, useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import HealthPolicy from './HealthPolicy';
-import PrivacyPolicy from './PrivacyPolicy';
 
 const HEADLINE = 'DECODING BRAINS';
 
@@ -45,8 +43,6 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Landing />} />
-        <Route path="/health-policy" element={<HealthPolicy />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
